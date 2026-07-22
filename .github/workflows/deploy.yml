@@ -31,10 +31,12 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: |
+          npm install --no-audit --no-fund
+          npm install --os=linux --cpu=x64 sharp lightningcss
 
       - name: Build with Next.js
-        run: npx next build --webpack
+        run: npx next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
