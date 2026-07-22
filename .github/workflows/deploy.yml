@@ -33,10 +33,10 @@ jobs:
       - name: Install dependencies
         run: |
           npm install --no-audit --no-fund
-          npm install --os=linux --cpu=x64 sharp lightningcss
+          npm install --os=linux --cpu=x64 sharp lightningcss @tailwindcss/oxide
 
       - name: Build with Next.js
-        run: npx next build
+        run: npx next build --webpack
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
